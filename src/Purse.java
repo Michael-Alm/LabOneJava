@@ -49,6 +49,10 @@ public class Purse {
         return total;
     }
 
+    Map<Denomination, Integer> getCash() {
+        return cash;
+    }
+
     // Return a string representation of the purse contents
     @Override
     public String toString() {
