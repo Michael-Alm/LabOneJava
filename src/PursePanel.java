@@ -19,6 +19,15 @@ public class PursePanel extends JPanel {
     // Loads images for each denomination and stores them in the map
     private void loadDenominationImages() {
         denominationImages.put("One Hundred Dollar Note", loadImage("images/100_dollar_bill.png"));
+        denominationImages.put("Fifty-Dollar Note", loadImage("images/50_dollar_bill.png"));
+        denominationImages.put("Twenty-Dollar Note", loadImage("images/20_dollar_bill.png"));
+        denominationImages.put("Ten-Dollar Note", loadImage("images/10_dollar_bill.png"));
+        denominationImages.put("Five-Dollar Note", loadImage("images/5_dollar_bill.png"));
+        denominationImages.put("One-Dollar Note", loadImage("images/1_dollar_bill.png"));
+        denominationImages.put("Quarter", loadImage("images/25_cent.png"));
+        denominationImages.put("Dime", loadImage("images/10_cent.png"));
+        denominationImages.put("Nickel", loadImage("images/05_cent.png"));
+        denominationImages.put("Penny", loadImage("images/01_cent.png"));
     }
 
     // Helper method to load an image from a specified file path
