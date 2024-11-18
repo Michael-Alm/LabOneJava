@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
 public class Register {
-    // Use an array to hold the denominations in descending order
     private final Denomination[] denominations;
+    private final ChangeCalculator calculator;
 
     public Register() {
         // Initialize the array of denominations in descending order
@@ -18,28 +18,13 @@ public class Register {
                 new Denomination("Nickel", 0.05, "coin", "05_cent.png"),
                 new Denomination("Penny", 0.01, "coin", "01_cent.png")
         };
+        // Initialize with standard calculator
+        this.calculator = new StandardChangeCalculator(denominations);
     }
 
     // Create a purse that makes change for a given amount
     public Purse makeChange(double amt) {
-        // Create a purse object with the array of denominations
-        Purse purse = new Purse(denominations);
-        if (amt == 0) {
-            // If amount is 0, return the purse as empty
-            return purse;
-        }
-
-        // Loop through the denominations in descending order
-        for (Denomination denom : denominations) {
-            // Determine how many of this denomination can be used for the amount
-            int count = (int) (amt / denom.amt());
-            if (count > 0) {
-                // Add the denomination to the purse and subtract its value
-                purse.add(denom, count);
-                amt -= count * denom.amt();
-            }
-        }
-        return purse;
+        return calculator.calculateChange(amt);
     }
 
     // Getter for the denominations array
